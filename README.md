@@ -1,7 +1,7 @@
 # STAR2count_by_starcode.py
 
 
-<bold>usage example<\bold>
+## Usage Example ##
 
 python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \
 --outsam "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/corrected.sam" \
