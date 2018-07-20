@@ -21,7 +21,7 @@ http://science.sciencemag.org/content/early/2018/03/14/science.aam8999
 says:
  "We then used Starcode (45) to collapse UMIs of aligned reads that were within 1 nt mismatch of another UMI, assuming the two aligned reads were also from the same UBC. Each original barcoded cDNA molecule is amplified before tagmentation and subsequent PCR, so a single UMI-UBC combination can have several distinct cDNA reads corresponding to different parts of the transcript. Occasionally STAR will map these different reads to different genes. As a result, we chose the most frequently assigned gene as the mapping for the given UMI-UBC combination. We then generated a matrix of gene counts for each cell (N x K matrix, with N cells and K genes)."
  
- I tried to follow it and write this script to facilitate this procedure
+ I tried to follow it and write this script from starcode-umi to facilitate this procedure
  
  starcode is from https://github.com/gui11aume/starcode
  
