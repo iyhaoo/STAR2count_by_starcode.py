@@ -28,10 +28,14 @@ says:
  
  dropseq_tools is from http://mccarrolllab.com/dropseq/
  
- reference:
+ Reference:
+ 
  1.Rosenberg A B, Roco C M, Muscat R A, et al. Single-cell profiling of the developing mouse brain and spinal cord with split-pool barcoding[J]. Science, 2018, 360(6385): 176-182.
+ 
  2.Zorita E, Cusco P, Filion G J. Starcode: sequence clustering based on all-pairs search[J]. Bioinformatics, 2015, 31(12): 1913-1919.
+ 
  3.Macosko E Z, Basu A, Satija R, et al. Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets[J]. Cell, 2015, 161(5): 1202-1214.
+ 
  4.Dobin A, Davis C A, Schlesinger F, et al. STAR: ultrafast universal RNA-seq aligner[J]. Bioinformatics, 2013, 29(1): 15-21.
 
  
