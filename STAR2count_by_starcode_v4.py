@@ -11,6 +11,7 @@ import time
 parser = argparse.ArgumentParser(description='Use starcode to demultiplex reads containing UMI identifiers.')
 # parser.add_argument('--umi-len', required=True, type=int, help="UMI lenght (must be at the beginning of the read)")
 parser.add_argument('--outcount', required=False, default="", type=str, help="output expression matrix")
+parser.add_argument('--samtools-path', required=False, default="", type=str, help="use samtools to read bam-file")
 parser.add_argument('--umi-d', required=False, default=0, type=int, help="UMI match distance (default: 0)")
 parser.add_argument('--gene-tag', required=True, type=str, help="sam gene tag")
 parser.add_argument('--umi-cluster', required=False, default='mp', type=str,
@@ -31,7 +32,7 @@ params = parser.parse_args()
 path = params.starcode_path
 umi_cluster = params.umi_cluster
 umi_ratio = params.umi_cluster_ratio
-
+samtool_path = params.samtools_path
 
 # UMI and SEQ params
 umi_tau = params.umi_d  # umi mismatches
@@ -47,7 +48,6 @@ if __name__ == '__main__':
     if umi_cluster not in clust_opts:
         sys.stderr.write("Error, cluster option must be 's', 'mp' or 'cc'.\n")
         sys.exit(1)
-
     # UMI options
     if umi_cluster == 's':
         umi_args = "-s"
@@ -62,28 +62,42 @@ if __name__ == '__main__':
     sys.stderr.write("parsing barcodes\n")
     lastTime = time.time()
     tmp_file = params.sam_file.replace("\\", "/").rsplit("/", 1)[0] + "/s2ctmp"
+
+
     with open(tmp_file, "w") as t_f:
-        with open(params.sam_file) as f:
-            for l_i, line in enumerate(f):
-                if line[0] == "@":
-                    t_f.write(line)
-                else:
-                    # Starcode seqs and UMIs independently.
-                    line = line.rstrip()
-                    split_line = line.split("\t")
-                    read_id_region = split_line[0]
-                    split_read_id_region = read_id_region.split("_", 2)
-                    umi_s = split_read_id_region[2]
-                    tags = [x.split(":", 1)[0] for x in split_line[11:]]
-                    if params.gene_tag in tags:
-                        # Send umi_s to umi process.
-                        umiproc.stdin.write(umi_s + "\n")
-                        t_f.write(line + "\n")
-                if l_i % 1000000 == 0:
-                    sys.stderr.write("Read {} lines in {} seconds\n".format(l_i, time.time() - lastTime))
-                    lastTime = time.time()
-                # if l_i > 300000:
-                #    break ###test
+        if params.sam_file.rsplit(".", 1)[1] == "bam":
+            is_bam = True
+            if samtool_path == "":
+                sys.stderr.write("Error, cannot read bam-file without samtools.\n")
+                sys.exit(1)
+            samtools_arg = [samtool_path, "view", "-h", params.sam_file]
+            samtools_proc = subprocess.Popen(samtools_arg, stdout=subprocess.PIPE)
+            f = samtools_proc.stdout
+        else:
+            is_bam = False
+            f = open(params.sam_file)
+        for l_i, line in enumerate(f):
+            if line[0] == "@":
+                t_f.write(line)
+            else:
+                # Starcode seqs and UMIs independently.
+                line = line.rstrip()
+                split_line = line.split("\t")
+                read_id_region = split_line[0]
+                split_read_id_region = read_id_region.split("_", 2)
+                umi_s = split_read_id_region[2]
+                tags = [x.split(":", 1)[0] for x in split_line[11:]]
+                if params.gene_tag in tags:
+                    # Send umi_s to umi process.
+                    umiproc.stdin.write(umi_s + "\n")
+                    t_f.write(line + "\n")
+            if l_i % 1000000 == 0:
+                sys.stderr.write("Read {} lines in {} seconds\n".format(l_i, time.time() - lastTime))
+                lastTime = time.time()
+            # if l_i > 300000:
+            #    break ###test
+        if not is_bam:
+            f.close()
     # Close pipes and let starcode run.
     umiproc.stdin.close()
     sys.stderr.write("Start make dictionary (use {} seconds)\n".format(time.time() - lastTime))
