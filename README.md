@@ -54,5 +54,6 @@ SRR6750041.55054756_AACCACATACACAGAATGGAACAACAGATC_ATCTCGTGTG   0       GRCh38_1
  
   4.Dobin A, Davis C A, Schlesinger F, et al. STAR: ultrafast universal RNA-seq aligner[J]. Bioinformatics, 2013, 29(1): 15-21.
 
+  5.Smith T S, Heger A, Sudbery I. UMI-tools: Modelling sequencing errors in Unique Molecular Identifiers to improve quantification accuracy[J]. Genome research, 2017: gr. 209601.116.
  
  
