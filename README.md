@@ -41,8 +41,8 @@ SRR6750041.55054756_AACCACATACACAGAATGGAACAACAGATC_ATCTCGTGTG   0       GRCh38_1
   - In which AACCACATACACAGAATGGAACAACAGATC is cell barcode and ATCTCGTGTG is UMI
 ### Running performance
 
-    .. image:: https://github.com/iyhaoo/STAR2count_by_starcode.py/blob/master/%E5%9B%BE%E7%89%871.png&container=focus&resize_w=550
-    .. image:: https://github.com/iyhaoo/STAR2count_by_starcode.py/blob/master/%E5%9B%BE%E7%89%872.png&container=focus&resize_w=550
+.. image:: https://github.com/iyhaoo/STAR2count_by_starcode.py/blob/master/%E5%9B%BE%E7%89%871.png&container=focus&resize_w=550
+.. image:: https://github.com/iyhaoo/STAR2count_by_starcode.py/blob/master/%E5%9B%BE%E7%89%872.png&container=focus&resize_w=550
 
 ### Reference:
  
