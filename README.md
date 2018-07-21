@@ -46,8 +46,8 @@ SRR6750041.55054756_AACCACATACACAGAATGGAACAACAGATC_ATCTCGTGTG   0       GRCh38_1
 
   - In which AACCACATACACAGAATGGAACAACAGATC is cell barcode and ATCTCGTGTG is UMI
 ### Running performance
-![performance](./%E5%9B%BE%E7%89%871.png)
-![performance](./%E5%9B%BE%E7%89%872.png)
+
+![performance](./%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20180721165059.png)
 
 
 ### Reference:
