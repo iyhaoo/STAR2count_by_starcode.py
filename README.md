@@ -3,11 +3,13 @@
 
 ### Usage Example
 
-`python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \
-  --outsam "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/corrected.sam" \
-  --outcount "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/count.tsv" \
-  --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
-  "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"`
+.. code:: bash
+$ python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \
+    --outsam "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/corrected.sam" \
+    --outcount "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/count.tsv" \
+    --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
+    "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"
+
 
 
 
