@@ -3,11 +3,11 @@
 
 ### Usage Example
 
-python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \\
+`python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \\
 --outsam "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/corrected.sam" \\
 --outcount "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/count.tsv" \\
 --starcode-path "/home/yuanhao/softwares/starcode/starcode" \\
-"/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"
+"/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"`
 
 
 
@@ -40,7 +40,7 @@ says:
 SRR6750041.54895966_ACTATGCAACACAGAATGGAACAACAGATC_CGTCATGTAT   0       GRCh38_19       8455426 3       66M     *       0       0       GAATGAGAAGAGGAAGGAGAAAAACATAAAAAGAGGAGGCAATCGCTTTGAGCCATATGCCAACCC    AAAAAEEEEEEEEEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEAEEEE66      GE:Z:GRCh38_HNRNPM   XF:Z:CODING      NH:i:2  HI:i:1  nM:i:1  AS:i:62 GS:Z:+
 SRR6750041.55054756_AACCACATACACAGAATGGAACAACAGATC_ATCTCGTGTG   0       GRCh38_19       8455426 3       66M     *       0       0       GAATGAGAAGAGGAAGGAGAAAAACATAAAAAGATGAGGCAATCGCTTTGAGCCATATGCCAACCC    AAAAAEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEAEAEEEAEAEEE      GE:Z:GRCh38_HNRNPM   XF:Z:CODING      NH:i:2  HI:i:1  nM:i:2  AS:i:60 GS:Z:+
 
-In which AACCACATACACAGAATGGAACAACAGATC is cell barcode and ATCTCGTGTG is UMI
+ - In which AACCACATACACAGAATGGAACAACAGATC is cell barcode and ATCTCGTGTG is UMI
  
  ### Reference:
  
