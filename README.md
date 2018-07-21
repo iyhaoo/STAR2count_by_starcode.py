@@ -11,6 +11,30 @@
             --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
             "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"
 
+If you're using Conda, you can use:
+
+.. code:: bash
+
+   $ conda install -c https://conda.anaconda.org/toms umi_tools
+
+Or pip:
+
+.. code:: bash
+
+   $ pip install umi_tools
+
+
+Or if you'd like to work directly from the git repository:
+
+.. code:: bash
+
+   $ git clone https://github.com/CGATOxford/UMI-tools.git
+
+Enter repository and run:
+
+.. code:: bash
+
+   $ python setup.py install
 
 
 
