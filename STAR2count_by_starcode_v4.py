@@ -134,7 +134,7 @@ if __name__ == '__main__':
                     barcode_dict[barcode_s] = {}
                     barcode_dict[barcode_s][mapping_dict[str(into_star_code_line)]] = \
                         split_line[11 + tags.index(params.gene_tag)].rsplit(":", 1)[1]
-                if into_star_code_line % 100000 == 0:
+                if into_star_code_line % 1000000 == 0:
                     sys.stderr.write("Processing {} reads with gene_tag in {} seconds\n".format(into_star_code_line, time.time() - lastTime))
                     lastTime = time.time()
 
