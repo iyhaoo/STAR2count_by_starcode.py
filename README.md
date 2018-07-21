@@ -3,11 +3,17 @@
 
 ### Usage Example
 
-    $ python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode.py --gene-tag=GE \
-        --outsam "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/corrected.sam" \
-        --outcount "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/count.tsv" \
-        --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
-        "/home/yuanhao/single_cell/GSE110823_output/SRR6750041/star_results/test.sam"
+    $ python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode_v4.py --gene-tag=GE \
+            --umi-d 1 \
+            --samtools-path samtools \
+            --outcount $star_results"/count.tsv" \
+            --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
+            --umi-threads 24 \
+            $star_results"/tagged_Aligned.out.bam"
+
+
+
+
 
 
 As the article "Single-cell profiling of the developing mouse brain and spinal cord with split-pool barcoding"
