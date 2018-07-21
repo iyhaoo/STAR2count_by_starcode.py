@@ -93,7 +93,7 @@ if __name__ == '__main__':
         line_split = line.split("\t", 2)
         for index in line_split[2].replace("\n", "").split(","):
             mapping_dict[index] = line_split[0]
-    #print(mapping_dict)
+    sys.stderr.write("Find {} tagged reads\n".format(len(mapping_dict.keys())))
     with open(tmp_file) as f:
         barcode_dict = {}
         into_star_code_line = 0
@@ -135,6 +135,7 @@ if __name__ == '__main__':
                 out_dict[gene_cell_element] += 1
             except:
                 out_dict[gene_cell_element] = 1
+    sys.stderr.write("Got {} unique UMIs\n".format(sum(out_dict.values())))
     if params.outcount != "":
         with open(params.outcount, "w") as f:
             for key, val in out_dict.items():
