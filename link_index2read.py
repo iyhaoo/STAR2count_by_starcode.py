@@ -33,8 +33,7 @@ if __name__ == '__main__':
     line_number = 0
     fastq_form = 4
 
-
-
+    lastTime = time.time()
     if params.read_file2 != "":
         with gzip.open(params.index) as index_f,\
              gzip.open(params.read_file) as read1_f,\
@@ -54,7 +53,8 @@ if __name__ == '__main__':
                 out1_f.write(read1_form_output)
                 out2_f.write(read2_form_output)
                 if read_index % 100000 == 0:
-                    print("process {} reads".format(read_index))
+                    print("process {} reads in {} seconds".format(read_index, time.time() - lastTime))
+                    lastTime = time.time()
 
     else:
         with gzip.open(params.index) as index_f,\
@@ -71,4 +71,5 @@ if __name__ == '__main__':
                 read1_form_output = make_read_form_output(index_line, fastq_form, read1_f)
                 out1_f.write(read1_form_output)
                 if read_index % 100000 == 0:
-                    print("process {} reads".format(read_index))
+                    print("process {} reads in {} seconds".format(read_index, time.time() - lastTime))
+                    lastTime = time.time()
