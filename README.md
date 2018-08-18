@@ -3,13 +3,19 @@
 
 ### Usage Example
 
-    $ python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode_v4.py --gene-tag=GE \
-            --umi-d 1 \
-            --samtools-path samtools \
-            --outcount $star_results"/count.tsv" \
-            --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
-            --umi-threads 24 \
-            $star_results"/tagged_Aligned.out.bam"
+    $ python /home/yuanhao/single_cell/scripts/STAR2count_by_starcode_v5.py --gene-tag GE \
+        --umi-d 1 \
+        --samtools-path samtools \
+        --out-count $star_results"/count.tsv" \
+        --out-sam $star_results"/collapsed_Aligned.out.sam" \
+        --starcode-path "/home/yuanhao/softwares/starcode/starcode" \
+        --umi-threads 24 \
+        $star_results"/tagged_Aligned.out.bam"
+
+
+
+
+
 
 
 
